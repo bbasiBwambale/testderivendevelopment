@@ -31,18 +31,28 @@ class VehicleRepositoryTest {
 
     @Test
     void findById() {
+        vehicleRepository.save(car);
+        assertEquals(car, vehicleRepository.findById(car.getVin()).get());
     }
 
     @Test
     void update() {
+      Vehicle car1 =   vehicleRepository.save(car);
+      car1.setModel(updatedCar.getModel());
+        assertEquals(car1.getModel(), vehicleRepository.save(updatedCar).getModel());
     }
 
     @Test
     void save() {
+        assertEquals(car, vehicleRepository.save(car));
     }
 
     @Test
     void deleteById() {
+        vehicleRepository.save(car);
+        assertEquals(1, vehicleRepository.findAll().size());
+        vehicleRepository.deleteById(car.getVin());
+        assertEquals(0, vehicleRepository.findAll().size());
     }
 
 }
