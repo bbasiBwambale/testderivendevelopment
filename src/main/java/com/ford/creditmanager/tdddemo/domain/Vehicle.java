@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
@@ -14,6 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 @Builder
+@Table(name = "vehicle")
 public class Vehicle {
     @Id
     private UUID vin;

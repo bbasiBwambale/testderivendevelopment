@@ -24,11 +24,6 @@ class VehicleRepositoryTest {
         updatedCar = Vehicle.builder().vin(UUID.randomUUID()).model("Machi-ev 2021").build();
     }
 
-    @Autowired
-    public VehicleRepositoryTest(VehicleRepository repo){
-        this.vehicleRepository = repo;
-    }
-
     @Test
     void findAll() {
         assertEquals(0, vehicleRepository.findAll().size());
