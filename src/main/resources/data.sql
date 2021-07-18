@@ -1,0 +1,1 @@
+/*insert into vehicle(vin, model) values ('77d0730b885b4a2ca3b23e207a7eac11', 'FordTruck150');*/
